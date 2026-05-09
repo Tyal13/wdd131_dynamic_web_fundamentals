@@ -11,13 +11,17 @@ header {
     color: white;
     padding: 1vmax 1vmax;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    position: relative;
 }
 
 h1 {
     margin: 0;
     font-size: 1.25rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .menu-btn {
