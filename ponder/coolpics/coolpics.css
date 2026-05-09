@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+}
+
+header {
+    background-color: #0066cc;
+    color: white;
+    padding: 1vmax 1vmax;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.menu-btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+nav {
+    display: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1rem;
+}
+
+nav a:hover {
+    color: #ccc;
+}
+
+.section-title {
+    background-color: #ccc;
+    padding: 1vmax;
+    text-align: center;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    background-color: #ccc;
+    padding: 1vmax 3vmax;
+    margin: 0;
+}
+
+.image-card {
+    margin: 0;
+    padding: 1vmax;
+    background-color: white;
+    border: 3px solid #333;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #999;
+}
+
+footer {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 1vmax;
+    margin-top: 0;
+}
+
+@media screen and (min-width: 700px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        padding: 1vmax 5vmax;
+    }
+    .menu-btn {
+        display: none;
+    }
+    nav {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 1vmax 8vmax;
+    }
+}
