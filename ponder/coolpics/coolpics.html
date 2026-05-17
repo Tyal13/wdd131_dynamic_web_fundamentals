@@ -6,6 +6,7 @@
     <title>Cool Pics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="coolpics.css">
+    <script defer src="coolpics.js"></script>
 </head>
 <body>
 
@@ -28,7 +29,7 @@
         <h2>Current Work</h2>
     </div>
 
-    <main>
+    <main class="gallery">
         <section class="image-card">
             <img src="img/image.png" alt="Cool picture 1">
         </section>
@@ -57,6 +58,11 @@
             <img src="img/image.png" alt="Cool picture 9">
         </section>
     </main>
+
+    <dialog>
+        <img>
+        <button class="close-viewer">X</button>
+    </dialog>
 
     <footer>Adam Herrmann</footer>
 
