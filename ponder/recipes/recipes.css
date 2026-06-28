@@ -64,7 +64,12 @@ header {
 
 .search-icon { width: 22px; height: 22px; }
 
-main { padding-top: 1em; }
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding-top: 1em;
+}
 
 .recipe-card,
 .recipe-info,
@@ -89,6 +94,8 @@ footer {
 }
 
 .recipe-info { align-items: flex-start; gap: 0.45em; }
+
+.recipe-tags { display: flex; flex-wrap: wrap; gap: 0.4em; }
 
 .tag {
   margin: 0;
