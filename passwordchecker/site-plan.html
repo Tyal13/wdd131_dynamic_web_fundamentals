@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PassGuard Project Plan | WDD 131</title>
+    <meta
+      name="description"
+      content="Site plan for PassGuard, a password strength checker and generator built for WDD 131."
+    />
+    <meta name="author" content="Adam Herrmann" />
+    <link type="text/css" rel="stylesheet" href="styles/site-plan.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>PassGuard Project Plan</h1>
+      <h2>Adam Herrmann</h2>
+      <h2>WDD 131</h2>
+    </header>
+
+    <main>
+      <hr />
+      <h2>Purpose</h2>
+      <ul>
+        <li>A simple, single page web app.</li>
+        <li>Rates how strong a password is as the user types it.</li>
+        <li>Later, it can also generate a strong random password.</li>
+        <li>Everything runs in the browser, so a password is never sent or stored.</li>
+        <li>Goal: help people build safer passwords and see what makes a password strong.</li>
+      </ul>
+
+      <hr />
+      <h2>Audience</h2>
+      <ul>
+        <li>Everyday internet users: students, family, and non technical people.</li>
+        <li>People creating a new online account who want a quick strength check.</li>
+        <li>Users who do not want to trust an unknown website with their password.</li>
+        <li>Also a WDD 131 portfolio piece that shows clean, mobile first work.</li>
+      </ul>
+
+      <hr />
+      <h2>Dynamic Elements</h2>
+      <ul>
+        <li>Live checker: a listener on the password field runs on every keystroke and updates the page.</li>
+        <li>Array 1 (blocklist): a commonPasswords array of weak or leaked passwords. commonPasswords.includes(pw) flags a match as too common.</li>
+        <li>Array 2 (spread): [...pw] turns the password into an array of characters so each one can be checked.</li>
+        <li>Array 3 (rules): a criteria array of rule objects. criteria.filter(...) counts the passed rules and criteria.forEach(...) builds the checklist.</li>
+        <li>if / else picks the label and color: Weak, Medium, or Strong.</li>
+        <li>DOM: the code selects and changes the strength bar, the label, and the checklist.</li>
+        <li>Functions: isCommon, checkStrength, getStrengthLabel, updateUI.</li>
+        <li>Stretch goal: a generator that builds a password from character arrays, then runs the same checker.</li>
+      </ul>
+      <p>JavaScript requirements this meets:</p>
+      <ul>
+        <li>More than one function.</li>
+        <li>Select an element, change it, and react to an event (the live input).</li>
+        <li>Conditional branching with if / else.</li>
+        <li>Objects, Arrays, and array methods (includes, filter, forEach), plus the spread operator.</li>
+      </ul>
+
+      <hr />
+      <h2>Logo</h2>
+      <img
+        src="images/logo.svg"
+        alt="PassGuard logo: a padlock next to the PassGuard name"
+      />
+
+      <hr />
+      <h2>Color Palette</h2>
+      <ul>
+        <li>
+          Palette URL:
+          <a
+            href="https://coolors.co/0b3d91-3a7ca5-2e933c-e09f3e-c1121f"
+            target="_blank"
+            rel="noopener"
+            >https://coolors.co/0b3d91-3a7ca5-2e933c-e09f3e-c1121f</a
+          >
+        </li>
+        <li>Green, amber, and red are also the Strong, Medium, and Weak states of the meter.</li>
+      </ul>
+
+      <table class="colors">
+        <tbody>
+          <tr>
+            <th>Primary</th>
+            <th>Secondary</th>
+            <th>Accent 1 (Strong)</th>
+            <th>Accent 2 (Medium)</th>
+          </tr>
+          <tr>
+            <td class="swatch primary"></td>
+            <td class="swatch secondary"></td>
+            <td class="swatch accent1"></td>
+            <td class="swatch accent2"></td>
+          </tr>
+          <tr>
+            <td>#0B3D91</td>
+            <td>#3A7CA5</td>
+            <td>#2E933C</td>
+            <td>#E09F3E</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+      <h2>Fonts</h2>
+      <ul>
+        <li>Headings: Arial.</li>
+        <li>Body text: Georgia.</li>
+        <li>Passwords are shown in a monospace font so each character is clear.</li>
+        <li>Simple, web safe fonts, so nothing extra needs to load.</li>
+      </ul>
+
+      <hr />
+      <h2>Content</h2>
+
+      <h3>Home page (the tool)</h3>
+      <ul>
+        <li>Heading: How strong is your password?</li>
+        <li>Subtext: Type a password to see its strength instantly. Nothing you type ever leaves your browser.</li>
+        <li>Password input with a show or hide toggle.</li>
+        <li>Strength labels: Too common (avoid), Weak, Medium, Strong.</li>
+        <li>Checklist: at least 12 characters; uppercase and lowercase letters; a number; a symbol; not a common or leaked password.</li>
+        <li>Generator (later): length, Uppercase, Numbers, and Symbols options, plus Generate and Copy buttons.</li>
+      </ul>
+
+      <h3>About section</h3>
+      <ul>
+        <li>Heading: Why password strength matters.</li>
+        <li>Intro: A strong password is your first line of defense for every online account.</li>
+        <li>Tips: length beats complexity; use a unique password for every site; avoid names, birthdays, and common passwords; a long passphrase is easy to remember and hard to crack; consider a password manager.</li>
+        <li>Privacy note: PassGuard checks everything on your own device. Your password is never uploaded, logged, or saved.</li>
+        <li>Button: Back to the tool.</li>
+      </ul>
+
+      <hr />
+      <h2>Pseudocode</h2>
+      <pre>
+CHECKER  (runs on every keystroke in the password box)
+  pw = value typed in the password field
+  IF commonPasswords.includes(pw)          // ARRAY + array method
+      label = "Too common", color = red
+  ELSE
+      chars  = [...pw]                      // spread the string into a character ARRAY
+      passed = criteria.filter(rule =&gt; rule.test(pw))   // ARRAY of rule objects
+      score  = passed.length
+      IF   score &lt;= 1   -&gt; label = "Weak",   color = red
+      ELSE IF score &lt;= 3 -&gt; label = "Medium", color = amber
+      ELSE                -&gt; label = "Strong", color = green
+  update the strength bar and the label
+  criteria.forEach(rule =&gt; show a check or an x next to rule.label)
+
+GENERATOR  (stretch goal, runs when the Generate button is clicked)
+  read the chosen length and the option checkboxes (uppercase, numbers, symbols)
+  pool = [...lowercaseLetters]
+  IF uppercase is checked -&gt; pool = [...pool, ...uppercaseLetters]
+  IF numbers   is checked -&gt; pool = [...pool, ...digits]
+  IF symbols   is checked -&gt; pool = [...pool, ...symbols]
+  password = ""
+  REPEAT length times -&gt; add a random character from pool
+  show the password, then run the CHECKER on it
+      </pre>
+
+      <hr />
+      <h2>Wireframes</h2>
+      <p>
+        PassGuard is one page: the tool sits at the top and the About information
+        continues below it. Here is a wireframe for each part.
+      </p>
+
+      <h3>Home page (the tool)</h3>
+      <img
+        src="images/wireframe-home.svg"
+        alt="Wireframe of the home page showing the password checker and generator layout"
+      />
+
+      <h3>About section (child page)</h3>
+      <img
+        src="images/wireframe-about.svg"
+        alt="Wireframe of the about section showing the heading, tips list, and button"
+      />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Home page wireframe: the password strength checker tool">
+  <title>Home page wireframe - Password Strength Checker tool</title>
+  <style>
+    .block { fill: #eef1f5; stroke: #c3ccd6; stroke-width: 1.5; }
+    .cap { font-family: 'Open Sans', Arial, sans-serif; font-size: 14px; fill: #3a4653; text-anchor: middle; }
+    .note { font-family: 'Open Sans', Arial, sans-serif; font-size: 11px; fill: #8592a0; text-anchor: middle; }
+  </style>
+
+  <rect x="1" y="1" width="398" height="598" fill="#ffffff" stroke="#dbe1e8"/>
+
+  <!-- header -->
+  <rect x="20" y="20" width="360" height="48" rx="6" class="block"/>
+  <text x="200" y="49" class="cap">Header + Nav  (logo | Tool | About)</text>
+
+  <!-- hero heading -->
+  <rect x="20" y="84" width="360" height="66" rx="6" class="block"/>
+  <text x="200" y="112" class="cap">Heading</text>
+  <text x="200" y="132" class="note">"How strong is your password?"</text>
+
+  <!-- password input -->
+  <rect x="20" y="166" width="360" height="52" rx="6" class="block"/>
+  <text x="200" y="196" class="cap">Password input  (show / hide)</text>
+
+  <!-- strength meter -->
+  <rect x="20" y="234" width="360" height="44" rx="6" class="block"/>
+  <text x="200" y="261" class="cap">Strength meter + label</text>
+
+  <!-- checklist -->
+  <rect x="20" y="294" width="360" height="104" rx="6" class="block"/>
+  <text x="200" y="322" class="cap">Requirements checklist</text>
+  <text x="200" y="344" class="note">length, letters, number, symbol,</text>
+  <text x="200" y="360" class="note">not a common / leaked password</text>
+
+  <!-- generator -->
+  <rect x="20" y="414" width="360" height="88" rx="6" class="block"/>
+  <text x="200" y="444" class="cap">Generator (stretch)</text>
+  <text x="200" y="466" class="note">length + options -> Generate / Copy -> output</text>
+
+  <!-- footer -->
+  <rect x="20" y="518" width="360" height="40" rx="6" class="block"/>
+  <text x="200" y="543" class="cap">Footer</text>
+</svg>

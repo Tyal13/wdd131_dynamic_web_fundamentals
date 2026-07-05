@@ -1,0 +1,107 @@
+/* PassGuard site plan. Simple monochrome styling.
+   Only the header box and the color palette swatches use color. */
+
+:root {
+  /* App color palette (shown in the Color Palette table) */
+  --primary-color: #0b3d91;
+  --secondary-color: #3a7ca5;
+  --accent1-color: #2e933c;
+  --accent2-color: #e09f3e;
+
+  /* Planned fonts for the app (simple, web safe) */
+  --heading-font: Arial, Helvetica, sans-serif;
+  --paragraph-font: Georgia, "Times New Roman", serif;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--paragraph-font);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading-font);
+  color: #000000;
+}
+
+/* Colored top box */
+header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  text-align: center;
+  padding: 1em;
+}
+header h1,
+header h2 {
+  color: #ffffff;
+  margin: 0.25em 0;
+}
+
+/* Black separator bars */
+hr {
+  border: none;
+  height: 2px;
+  background: #000000;
+  margin: 1.5em 0;
+}
+
+ul {
+  padding-left: 1.4em;
+}
+li {
+  margin: 0.3em 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+
+/* Pseudocode block */
+pre {
+  font-family: "Courier New", monospace;
+  background: #f2f2f2;
+  border: 1px solid #000000;
+  padding: 1em;
+  overflow-x: auto;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* Color palette. The swatch row keeps color. */
+table.colors {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 1em 0;
+}
+table.colors th,
+table.colors td {
+  border: 1px solid #000000;
+  padding: 0.5em;
+  width: 25%;
+}
+.swatch {
+  height: 3em;
+}
+.primary {
+  background-color: var(--primary-color);
+}
+.secondary {
+  background-color: var(--secondary-color);
+}
+.accent1 {
+  background-color: var(--accent1-color);
+}
+.accent2 {
+  background-color: var(--accent2-color);
+}

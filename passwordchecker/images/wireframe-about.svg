@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" role="img" aria-label="About section wireframe: password tips and information">
+  <title>About section wireframe - Why password strength matters</title>
+  <style>
+    .block { fill: #eef1f5; stroke: #c3ccd6; stroke-width: 1.5; }
+    .cap { font-family: 'Open Sans', Arial, sans-serif; font-size: 14px; fill: #3a4653; text-anchor: middle; }
+    .note { font-family: 'Open Sans', Arial, sans-serif; font-size: 11px; fill: #8592a0; text-anchor: middle; }
+  </style>
+
+  <rect x="1" y="1" width="398" height="518" fill="#ffffff" stroke="#dbe1e8"/>
+
+  <!-- header -->
+  <rect x="20" y="20" width="360" height="48" rx="6" class="block"/>
+  <text x="200" y="49" class="cap">Header + Nav  (logo | Tool | About)</text>
+
+  <!-- heading -->
+  <rect x="20" y="84" width="360" height="50" rx="6" class="block"/>
+  <text x="200" y="114" class="cap">Heading: "Why password strength matters"</text>
+
+  <!-- intro -->
+  <rect x="20" y="150" width="360" height="60" rx="6" class="block"/>
+  <text x="200" y="185" class="cap">Intro paragraph</text>
+
+  <!-- tips list -->
+  <rect x="20" y="226" width="360" height="150" rx="6" class="block"/>
+  <text x="200" y="256" class="cap">Password tips list</text>
+  <text x="200" y="278" class="note">length beats complexity, unique per site,</text>
+  <text x="200" y="294" class="note">avoid common passwords, use a manager</text>
+
+  <!-- button -->
+  <rect x="20" y="392" width="360" height="44" rx="6" class="block"/>
+  <text x="200" y="419" class="cap">"Back to the tool" button</text>
+
+  <!-- footer -->
+  <rect x="20" y="452" width="360" height="40" rx="6" class="block"/>
+  <text x="200" y="477" class="cap">Footer</text>
+</svg>
