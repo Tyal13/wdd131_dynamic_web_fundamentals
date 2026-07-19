@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PassGuard Password Strength Checker</title>
+    <meta
+      name="description"
+      content="PassGuard checks how strong your password is using NIST guidance, right in your browser. Nothing you type is ever sent or stored."
+    />
+    <meta name="author" content="Adam Herrmann" />
+    <link rel="icon" href="images/logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img class="logo-icon" src="images/logo.svg" alt="PassGuard padlock logo" />
+      </div>
+      <nav aria-label="Main Menu">
+        <ul class="main-nav">
+          <li><a href="#tool">Tool</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="tool" class="tool">
+        <h1>How strong is your password?</h1>
+        <p class="lead">
+          Type a password to see its strength instantly. Nothing you type ever
+          leaves your browser.
+        </p>
+
+        <div class="field">
+          <label for="password">Enter a password</label>
+          <div class="input-row">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="off"
+              aria-describedby="strength-label"
+            />
+            <button type="button" id="toggle" aria-pressed="false">Show</button>
+          </div>
+        </div>
+
+        <div class="meter" aria-hidden="true">
+          <div id="meter-bar" class="meter-bar"></div>
+        </div>
+        <p id="strength-label" class="strength-label" role="status" aria-live="polite">
+          Type a password to begin
+        </p>
+        <p id="summary" class="summary"></p>
+
+        <h2>Checklist based on NIST guidance</h2>
+        <ul id="checklist" class="checklist"></ul>
+      </section>
+
+      <section id="about" class="about">
+        <h2>Why password strength matters</h2>
+        <p>
+          A strong password is your first line of defense for every online
+          account. These tips follow the password guidance from NIST, the U.S.
+          National Institute of Standards and Technology.
+        </p>
+        <ul class="tips">
+          <li>Length matters most. NIST recommends a password of at least 15 characters.</li>
+          <li>Use a passphrase: join real words into something long and memorable, like "cassette lava baby".</li>
+          <li>You do not need special characters or numbers. NIST no longer requires them, though they can still help.</li>
+          <li>Avoid common or breached passwords such as "password" or "12345".</li>
+          <li>Use a unique password for every site, so one breach does not unlock everything.</li>
+          <li>Use a password manager, ideally one that supports multifactor authentication.</li>
+          <li>Turn on multifactor authentication wherever you can for an extra layer of protection.</li>
+        </ul>
+
+        <h3>Is my password already compromised?</h3>
+        <p>
+          Data breaches are common. NIST notes there were more than 3,000
+          breaches in 2024 (reported by the Identity Theft Resource Center), so
+          a password you already use may be on a public list. You can check
+          whether your email or passwords have appeared in a known breach with a
+          free tool like
+          <a href="https://haveibeenpwned.com" target="_blank" rel="noopener">Have I Been Pwned</a>.
+        </p>
+
+        <p class="privacy">
+          PassGuard checks everything on your own device. Your password is never
+          uploaded, logged, or saved.
+        </p>
+        <p class="source">
+          Source: NIST, "How do I create a good password?"
+          <a
+            href="https://www.nist.gov/cybersecurity-and-privacy/how-do-i-create-good-password"
+            target="_blank"
+            rel="noopener"
+            >nist.gov</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 PassGuard. Final Project by Adam Herrmann WDD 131.</p>
+    </footer>
+  </body>
+</html>

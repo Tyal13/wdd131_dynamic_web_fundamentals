@@ -1,0 +1,208 @@
+/* PassGuard styles - WDD 131 Final Project. Mobile first. */
+
+/* base page */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1b1b1b;
+  background: #ffffff;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: auto;
+  padding: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  color: #0b3d91;
+}
+
+/* header & nav area */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6em;
+  border-bottom: 2px solid #0b3d91;
+  padding-bottom: 1em;
+}
+
+.logo-icon {
+  width: 240px;
+  height: auto;
+}
+
+.main-nav {
+  list-style: none;
+  display: flex;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #0b3d91;
+  padding: 0.3em 0.7em;
+  border-radius: 6px;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background: #0b3d91;
+  color: #ffffff;
+}
+
+main {
+  padding: 1em 0;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+.lead {
+  color: #333333;
+}
+
+/* password box with the show/hide button */
+.field {
+  margin: 1.2em 0;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.35em;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.5em;
+}
+
+#password {
+  flex: 1;
+  min-width: 0;
+  font-size: 1.1rem;
+  padding: 0.6em;
+  border: 1px solid #767676;
+  border-radius: 6px;
+}
+
+#toggle {
+  font-weight: bold;
+  padding: 0.6em 1em;
+  border: 1px solid #0b3d91;
+  background: #ffffff;
+  color: #0b3d91;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#toggle:hover,
+#toggle:focus {
+  background: #0b3d91;
+  color: #ffffff;
+}
+
+/* pass strength meter */
+.meter {
+  height: 14px;
+  background: #d9d9d9;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 1em;
+}
+
+.meter-bar {
+  height: 100%;
+  width: 0;
+  background: #767676;
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.strength-label {
+  font-weight: bold;
+  margin: 0.4em 0 0.2em;
+}
+
+.summary {
+  font-weight: bold;
+  color: #333333;
+  margin: 0 0 1em;
+}
+
+/* requiremen checklist */
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  padding: 0.3em 0;
+}
+
+.checklist .met {
+  color: #15682b;
+}
+
+.checklist .unmet {
+  color: #595959;
+}
+
+/* about */
+.about {
+  border-top: 2px solid #0b3d91;
+  padding-top: 1em;
+}
+
+.tips li {
+  margin: 0.4em 0;
+}
+
+.privacy {
+  font-style: italic;
+  color: #333333;
+}
+
+.source {
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+/* footer */
+footer {
+  border-top: 1px solid #cccccc;
+  padding-top: 1em;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+/* wide screens */
+@media (min-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo-icon {
+    width: 300px;
+  }
+  h1 {
+    font-size: 2.4rem;
+  }
+}
